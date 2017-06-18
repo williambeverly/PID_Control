@@ -26,6 +26,8 @@ Criteria: Describe how the final hyperparameters were chosen
 
 * I then set the PID gains to 0.2, 3.0 and 0.004 respectively, with the search range equivalent to 0.1 of the initial parameters, and ran Twiddle. These values I chose were the same as Sebastian's parameters. Using a high tolerance (of 0.1) the values I obtained were 0.18, 3.33 and 0.004 for PID. These values enabled the car to complete a lap around the track. In terms of the system, the response is definitely oscillatory, but ultimately stable. I would not like to be a passenger in ths vehicle. To improve the damping of the system I increased the derivative gain, and ultimately decided on PID gains of 0.18, 3.3 and 0.005.
 
+* Below I have shown the PID gains over progressive iterations using Twiddle, versus the cumulative error value. I used these graphs as indication as to whether the values were changing significantly over time, and how the search ranges were changing. It is interesting to see that my final value of 0.005 was not actually probed by Twiddle - with my search range set to small. I would like to speed up the simulations significantly, and run it in the order of 1000 iterations. I think that a brute-force Twiddle algoritm is not the best method for finding PID parameters. Ideally, I would derive a transfer function that represents the system, and take this through the necessary control theory to arrive at more optimal parameters.
+
 ![Alt text](Images/kp.png)
 
 ![Alt text](Images/ki.png)
