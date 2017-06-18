@@ -22,7 +22,15 @@ void PID::Init(double Kp, double Ki, double Kd)
   total_error = 0;
   num_iterations = 0;
   stored_error = 0;
-
+	
+  //dKp = 1.0; // historical - Ignore
+  //dKi = 1.0; // historical - Ignore
+  //dKd = 1.0; // historical - Ignore
+  
+	//dKp = 0.67 * Kp; // historical - Ignore
+  //dKi = 0.67 * Ki; // historical - Ignore
+  //dKd = 0.67 * Kd; // historical - Ignore
+	
   dKp = 0.1 * Kp; // set relative to proportional gain
   dKi = 0.1 * Ki; // set relative to integral gain
   dKd = 0.1 * Kd; // set relative to deriv gain
