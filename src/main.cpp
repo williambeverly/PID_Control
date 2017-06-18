@@ -81,7 +81,7 @@ int main()
 
           if(pid.TwiddleEnable)
           {
-            if((abs(cte) > 2.5 ) || (pid.num_iterations > max_iterations))
+            if((fabs(cte) > 2.5 ) || (pid.num_iterations > max_iterations))
             {
               pid.TwiddleSticks();
               /* //Utilised for writing debug text files for plotting
