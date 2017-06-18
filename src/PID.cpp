@@ -5,15 +5,12 @@
 
 using namespace std;
 
-/*
-* TODO: Complete the PID class.
-*/
-
 PID::PID() {}
 
 PID::~PID() {}
 
-void PID::Init(double Kp, double Ki, double Kd) {
+void PID::Init(double Kp, double Ki, double Kd) 
+{
 	PID::Kp = Kp;
 	PID::Ki = Ki;
 	PID::Kd = Kd;
@@ -38,13 +35,15 @@ void PID::Init(double Kp, double Ki, double Kd) {
   TwiddleEnable = true;
 }
 
-void PID::UpdateError(double cte, double dt) {
+void PID::UpdateError(double cte, double dt) 
+{
 	d_error = (cte - p_error) / dt;
 	p_error = cte;
   i_error += cte * dt;
 }
 
-double PID::TotalError() {
+double PID::TotalError() 
+{
 	total_error = -Kp * p_error - Kd * d_error - Ki * i_error; // using total_error for storage purposes
 	return total_error;
 }
@@ -85,8 +84,6 @@ void PID::TwiddleSticks()
     std::cout << " gains: " << Kp << "," << Ki << "," << Kd << std::endl;
     std::cout << "dgains: " << dKp << "," << dKi << "," << dKd << std::endl;
   }
-
-
 
   if(sum_delta_gain > TOLERANCE_DELTA)
   {
