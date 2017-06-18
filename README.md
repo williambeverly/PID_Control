@@ -11,7 +11,7 @@ The user may enter the following commands in terminal to build, in Ubuntu:
 ## Response to rubric requirements
 ### Compiling
 * Requirement: Code should compile without errors with `cmake` and `make`
-* Response: Code compiles without error.
+* Response: Code compiles without error - although it does provide a warning on Ubuntu that "angle" and "speed" are not utilised. I have only implemented PID on the steering value, not on the speed.
 
 ### Implementation
 * Requirement: The PID procedure follows what was taught in the lessons.
