@@ -59,7 +59,7 @@ double PID::TotalError()
 void PID::StoreError(double cte)
 {
   if(num_iterations > MIN_NUMBER_ITERATIONS)
-    stored_error += abs(cte);
+    stored_error += fabs(cte);
 
   num_iterations += 1;
 }
