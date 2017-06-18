@@ -83,7 +83,7 @@ int main()
             if((abs(cte) > 2.5 ) || (pid.num_iterations > max_iterations))
             {
               pid.TwiddleSticks();
-              //Utilised for writing debug text files for plotting
+              /*//Utilised for writing debug text files for plotting
               myfile.open("../storage.txt", std::ios_base::app);
               myfile << pid.stored_error << ";";
               myfile << pid.best_error << ";";
@@ -97,7 +97,7 @@ int main()
               myfile << pid.i_error << ";";
               myfile << pid.d_error << "\n";
               myfile.close();
-
+	      */
               pid.Restart(ws);
               pid.num_iterations = 0;
               pid.stored_error = 0;
