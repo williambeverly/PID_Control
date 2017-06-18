@@ -38,9 +38,10 @@ int main()
   uWS::Hub h;
 
   PID pid;
-	//pid.Init(0.2,3.0,0.004);
-	pid.Init(0.18, 3.3, 0.005); // initialisation of PID
-	//pid.Init(0.2, 0.3, 0.004); // initialisation of PID
+	//pid.Init(0.0,0.0,0.0); // historical - Ignore
+	//pid.Init(0.2, 0.3, 0.004); // historical - Ignore
+	//pid.Init(0.2, 3.0, 0.004); // historical - Ignore
+	pid.Init(0.18, 3.3, 0.005); // initialisation of PID (final values)
 	pid.TwiddleEnable = false; // by default, this is set to true, so override manually for turning this off
 	const int max_iterations = 600; // controls how long to run for before resetting the simulation to the start
 
@@ -83,7 +84,7 @@ int main()
             if((abs(cte) > 2.5 ) || (pid.num_iterations > max_iterations))
             {
               pid.TwiddleSticks();
-              /*//Utilised for writing debug text files for plotting
+              /* //Utilised for writing debug text files for plotting
               myfile.open("../storage.txt", std::ios_base::app);
               myfile << pid.stored_error << ";";
               myfile << pid.best_error << ";";
@@ -97,7 +98,7 @@ int main()
               myfile << pid.i_error << ";";
               myfile << pid.d_error << "\n";
               myfile.close();
-	      */
+	      			*/
               pid.Restart(ws);
               pid.num_iterations = 0;
               pid.stored_error = 0;
