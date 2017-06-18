@@ -26,6 +26,12 @@ Criteria: Describe how the final hyperparameters were chosen
 
 * I then set the PID gains to 0.2, 3.0 and 0.004 respectively, with the search range equivalent to 0.1 of the initial parameters, and ran Twiddle. These values I chose were the same as Sebastian's parameters. Using a high tolerance (of 0.1) the values I obtained were 0.18, 3.33 and 0.004 for PID. These values enabled the car to complete a lap around the track. In terms of the system, the response is definitely oscillatory, but ultimately stable. I would not like to be a passenger in ths vehicle. To improve the damping of the system I increased the derivative gain, and ultimately decided on PID gains of 0.18, 3.3 and 0.005.
 
+![Alt text](Images/kp.png)
+
+![Alt text](Images/ki.png)
+
+![Alt text](Images/kd.png)
+
 ### Simulation
 Criteria: The vehicle must successfully drive a lap around the track.
 * Response: The car drives around the track, although I do not want to be a passenger!
